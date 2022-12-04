@@ -3,7 +3,7 @@
 Python module to simplify AoC challenge
 
 ## Usage
-``````shell
+```shell
 python -m aoc --solutions=. <task_id>
 ```
 , where `task_id` is a number of the day you solving the task for
