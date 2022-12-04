@@ -15,4 +15,17 @@ python -m aoc --solutions=. <task_id>
 - Supports `--cache` to specify custom location for cache files
 - Supports `--solutions` to specify location with the solutions, solutions must be importable as python modules
 
+## Solution file
+Each solution file must follow naming convention: `task_<task_id>.py`
+Inside each solution file must be defined a class named `Task<task_id>` with the following *static* methods
+```py
+class Task4(Task):
+    @staticmethod
+    def solution_1(data: str) -> str|int:
+        ...
+
+    @staticmethod
+    def solution_2(data: str) -> str|int:
+        ...
+```
 
