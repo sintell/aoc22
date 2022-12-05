@@ -13,6 +13,7 @@ class colors:
     class fg:
         red = "\033[31m"
         green = "\033[32m"
+        yellow = "\033[33m"
 
 
 class Task(ABC):
@@ -85,7 +86,9 @@ class TaskRunner:
                         f"successefull run, {colors.bold}solution_1{colors.reset}: {colors.bold}{colors.fg.green}{result_1}{colors.reset}"
                     )
                 else:
-                    LOG.debug("no result for solution_1")
+                    LOG.info(
+                        f"successefull run, {colors.bold}solution_1{colors.reset}: {colors.bold}{colors.fg.yellow}no result{colors.reset}"
+                    )
 
                 LOG.debug(f"running solution_2")
                 result_2 = self.task_class.solution_2(data)
@@ -94,7 +97,9 @@ class TaskRunner:
                         f"successefull run, {colors.bold}solution_2{colors.reset}: {colors.bold}{colors.fg.green}{result_2}{colors.reset}"
                     )
                 else:
-                    LOG.debug("no result for solution_2")
+                    LOG.info(
+                        f"successefull run, {colors.bold}solution_2{colors.reset}: {colors.bold}{colors.fg.yellow}no result{colors.reset}"
+                    )
             except (Exception, RuntimeError) as e:
                 LOG.error(
                     f"got an exception while running solutions, probably something wrong with the code:\n\t{colors.fg.red}{e}{colors.reset}"
